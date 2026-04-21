@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
     <title>Para Larissa ❤️</title>
     <style>
         body {
@@ -36,16 +40,16 @@
             margin-bottom: 5vw;
         }
 
-        /* ESTILO DA SUA FOTO */
+        /* Estilo da foto de vocês */
         #nossaFoto {
-            width: 60vw; /* Um pouco menor que o container */
-            height: 60vw; /* Quadrada */
-            object-fit: cover; /* Faz a foto preencher o quadrado sem distorcer */
-            border-radius: 100%; /* Deixa a foto redonda */
-            border: 1vw solid white; /* Borda branca charmosa */
-            box-shadow: 0vw 1vw 3vw rgba(0,0,0,0.2); /* Sombra suave */
-            margin: 0 auto 5vw auto; /* Centraliza e dá espaço abaixo */
-            display: none; /* Escondida inicialmente */
+            width: 60vw; 
+            height: 60vw; 
+            object-fit: cover; 
+            border-radius: 100%; 
+            border: 1vw solid white; 
+            box-shadow: 0vw 1vw 3vw rgba(0,0,0,0.2); 
+            margin: 0 auto 5vw auto; 
+            display: none; 
         }
 
         p {
@@ -93,7 +97,8 @@
 <body>
 
     <div class="container">
-        <h1>Oi, Larissa ❤️</h1>
+        <h1 id="tituloPrincipal">Oi, Larissa ❤️</h1>
+        
         <button id="btnSurpresa">Tenho uma surpresa para você</button>
         
         <img id="nossaFoto" src="juntos.jpeg" alt="Foto de Rafael e Larissa">
@@ -104,15 +109,18 @@
 
     <script>
         document.getElementById('btnSurpresa').addEventListener('click', function() {
-            // Esconde o botão
+            // Esconde o botão original
             this.style.display = 'none';
 
-            // MOSTRA A FOTO, a mensagem e a assinatura
+            // Muda o texto do título lá no topo
+            document.getElementById('tituloPrincipal').innerText = 'Amor ❤️';
+
+            // Mostra a foto, a declaração e a sua assinatura
             document.getElementById('nossaFoto').style.display = 'block';
             document.getElementById('mensagem').style.display = 'block';
             document.getElementById('assinatura').style.display = 'block';
 
-            // Efeito de chuva de corações
+            // Faz chover corações na tela
             for (let i = 0; i < 20; i++) {
                 setTimeout(() => {
                     let coracao = document.createElement('div');
