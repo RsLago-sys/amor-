@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Larissa ❤️</title>
+    <style>
+        body {
+            margin: 0vw;
+            padding: 0vw;
+            background-color: #ffeff0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 180vw; 
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            background: white;
+            padding: 10vw;
+            border-radius: 5vw;
+            box-shadow: 0vw 2vw 5vw rgba(0,0,0,0.1);
+            width: 70vw;
+            z-index: 10;
+        }
+
+        h1 {
+            color: #d63031;
+            font-size: 8vw;
+            margin-top: 0vw;
+            margin-bottom: 5vw;
+        }
+
+        /* ESTILO DA SUA FOTO */
+        #nossaFoto {
+            width: 60vw; /* Um pouco menor que o container */
+            height: 60vw; /* Quadrada */
+            object-fit: cover; /* Faz a foto preencher o quadrado sem distorcer */
+            border-radius: 100%; /* Deixa a foto redonda */
+            border: 1vw solid white; /* Borda branca charmosa */
+            box-shadow: 0vw 1vw 3vw rgba(0,0,0,0.2); /* Sombra suave */
+            margin: 0 auto 5vw auto; /* Centraliza e dá espaço abaixo */
+            display: none; /* Escondida inicialmente */
+        }
+
+        p {
+            color: #2d3436;
+            font-size: 5vw;
+            line-height: 8vw;
+            margin-bottom: 5vw;
+            display: none; 
+        }
+
+        button {
+            background-color: #d63031;
+            color: white;
+            border: none;
+            padding: 4vw 8vw;
+            font-size: 5vw;
+            border-radius: 3vw;
+            cursor: pointer;
+            margin-top: 2vw;
+            font-weight: bold;
+        }
+
+        .assinatura {
+            font-size: 4.5vw;
+            color: #d63031;
+            font-weight: bold;
+            margin-top: 5vw;
+            text-align: right;
+            display: none;
+        }
+
+        .coracao {
+            position: absolute;
+            color: #d63031;
+            font-size: 8vw;
+            animation: subir 4s linear infinite;
+        }
+
+        @keyframes subir {
+            0% { transform: translateY(0vw); opacity: 1; }
+            100% { transform: translateY(-200vw); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Oi, Larissa ❤️</h1>
+        <button id="btnSurpresa">Tenho uma surpresa para você</button>
+        
+        <img id="nossaFoto" src="juntos.jpeg" alt="Foto de Rafael e Larissa">
+
+        <p id="mensagem">Você é a melhor parte dos meus dias. Escrevi isso só para lembrar o quanto você é especial para mim e o quanto eu quero você sempre do meu lado. Eu te amo demais!</p>
+        <div class="assinatura" id="assinatura">Com amor, Rafael</div>
+    </div>
+
+    <script>
+        document.getElementById('btnSurpresa').addEventListener('click', function() {
+            // Esconde o botão
+            this.style.display = 'none';
+
+            // MOSTRA A FOTO, a mensagem e a assinatura
+            document.getElementById('nossaFoto').style.display = 'block';
+            document.getElementById('mensagem').style.display = 'block';
+            document.getElementById('assinatura').style.display = 'block';
+
+            // Efeito de chuva de corações
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    let coracao = document.createElement('div');
+                    coracao.innerHTML = '❤️';
+                    coracao.className = 'coracao';
+                    coracao.style.left = (Math.random() * 90) + 'vw';
+                    coracao.style.top = 180 + 'vw';
+                    document.body.appendChild(coracao);
+                }, i * 150);
+            }
+        });
+    </script>
+
+</body>
+</html>
